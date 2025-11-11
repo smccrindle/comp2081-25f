@@ -64,44 +64,82 @@ h2, h3 {
 
 /* STEP 10: Rotate the element (X, Y, and Z) */
 #transforms h3:nth-of-type(6) {
+	display: inline-block;
+	outline: 2px dashed white;
+	transform: rotateX(45deg);
+	transform: rotateY(45deg);
+	transform: rotateZ(45deg);
+	transform: rotate(30deg);
+	transform: rotate3d(1, 1, 1, 30deg);
 }
 
 /* STEP 11: Combining transforms */
 #transforms h3:nth-of-type(7) {
+	display: inline-block;
+	outline: 2px dashed green;
+	transform: translate(30px, -50px) scale(3) rotate(20deg) skew(30deg, 20deg);
 }
 
 /* TRANSITIONS
 -------------------------------------------------- */
 /* STEP 12: Setting up a transition */
 #transitions h3:nth-of-type(1) {
+	display: inline-block;
+	outline: 2px dashed pink;
+	background-color: rgb(250, 165, 8);
 	/* Transition property */
+	transition-property: background-color, transform;
 	/* Transition duration */
+	transition-duration: 1s;
 }
 #transitions h3:nth-of-type(1):hover {
+	background-color: rgb(255, 105, 180);
+	transform: scale(1.5);
 }
 
 /* STEP 13: Delaying a transition */
 #transitions h3:nth-of-type(2) {
+	display: inline-block;
+	outline: 2px dashed purple;
 	/* Transition property */
+	transition-property: transform;
 	/* Transition duration */
+	transition-duration: 1s;
 	/* Transition delay */
+	transition-delay: 0.5s;
 }
 #transitions h3:nth-of-type(2):hover {
+	transform: translateX(100px);
 }
 
 /* STEP 14: Controlling transition velocity */
 #transitions h3:nth-of-type(3) {
+	display: inline-block;
+	outline: 2px dashed olive;
 	/* Transition property */
+	transition-property: transform;
 	/* Transition duration */
+	transition-duration: 1s;
 	/* Transition timing function */
+	transition-timing-function: cubic-bezier(0.17,-0.54, 0.76, 1.57)
 }
 #transitions h3:nth-of-type(3):hover {
+	transform: translateX(150px);
 }
 
 /* STEP 15: Combining Transitions */
 #transitions h3:nth-of-type(4) {
+	display: inline-block;
+	height: 200px;
+	width: 300px;
+	transition-property: background-color, width, height;
+	transition-duration: 1s, 2s, 0.5s;
+	transition-delay: 0.5s, 0.25s, 2s;
 }
 #transitions h3:nth-of-type(4):hover {
+	background-color: red;
+	width: 400px;
+	height: 500px;
 }
 
 
@@ -109,4 +147,31 @@ h2, h3 {
 -------------------------------------------------- */
 
 footer p {
+	display: inline-block;
+	background-color: limegreen;
+	font-weight: bold;
+	position: relative;
+	left: 0;
+	/* Animation */
+	animation-name: slidein;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes slidein {
+	from {
+		left: 0;
+	}
+	25% {
+		left: 50px;
+		font-size: 150%;
+	}
+	75% {
+		left: 125px;
+		background-color: yellow;
+	}
+	to {
+		left: 150px;
+	}
 }
